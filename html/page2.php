@@ -4,10 +4,10 @@
 
 <?php
 // this file is to connect to the database
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "database";
+$servername = "LocalHost";
+$username = "UserName";
+$password = "Password";
+$dbname = "Database";
 
 // create the connection
 $conn = new mysqli($servername, $username, $password, $dbname);
