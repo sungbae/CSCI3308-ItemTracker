@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include 'connectOld.php';
 
 $search = $_POST['search']."*";
 
