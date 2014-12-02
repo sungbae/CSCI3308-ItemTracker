@@ -1,9 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
 <?php
 include 'connect.php';
 
 $search = $_POST['search']."*";
 
-$search_query = $link->prepare("SELECT itemName FROM itemTracker WHERE MATCH(name) AGAINST (? IN BOOLEAN MODE)")
+$search_query = $link->prepare("SELECT items FROM item WHERE MATCH(name) AGAINST (? IN BOOLEAN MODE)")
 $search_query->bind_param('s', $search);
 $search_query->execute();
 $search_query->store_result();
@@ -16,4 +20,7 @@ echo "$search has borrowed $search_rows item(s):";
 echo "$product_name <br>";
 }
 } else { echo "Your search did not return any results, please try again."; }
- ?>
+?>
+
+</body>
+</html>
