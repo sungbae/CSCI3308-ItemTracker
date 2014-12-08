@@ -1,6 +1,6 @@
 <?php
  // Connects to Our Database
-$link = new mysqli('128.138.65.97', 'root', 'dbPassword', 'itemTracker');
+$link = new mysqli('128.138.65.97', 'user', 'dbPassword', 'itemTracker');
 
 /* check connection */
 if (mysqli_connect_errno()) {
