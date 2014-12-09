@@ -3,7 +3,7 @@ include 'connect.php';
 
 $search = $_POST['search']."*";
 
-$search_query = $link->prepare("SELECT itemName FROM itemTracker WHERE MATCH(name) AGAINST (? IN BOOLEAN MODE)");
+$search_query = $link->prepare("SELECT * FROM `itemTracker` WHERE Name = ?");
 $search_query->bind_param('s', $search);
 $search_query->execute();
 $search_query->store_result();
