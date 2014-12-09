@@ -11,8 +11,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $name = $_POST["name"]."*";
-$sql = "SELECT Name FROM itemTracker WHERE Item = %s";
-$result = $conn->query(sprintf($sql, $name));
+//$sql = "SELECT Name FROM itemTracker WHERE Item = %s";
+$sql = sprintf("SELECT Name FROM itemTracker WHERE Item = %s",$name);
+echo $sql;
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
