@@ -4,10 +4,15 @@ include 'connect.php';
 $search = $_POST['searchItem']."*";
 
 $search_query = $link->prepare("SELECT * FROM `itemTracker` WHERE Item = ?");
+echo "$search_query";
 $search_query->bind_param('s', $search);
+echo "$search_query";
 $search_query->execute();
+echo "$search_query";
 $search_query->store_result();
+echo "$search_query";
 $search_rows = $search_query->num_rows;
+echo "$search_rows";
 $search_query->bind_result($product_name);
 
 if($search_rows > 0){
