@@ -7,4 +7,5 @@ if (mysqli_connect_errno()) {
     echo "Could not connect to database, please check your connection details";
     exit();
 }
+echo "Connected Successfully";
   ?>
