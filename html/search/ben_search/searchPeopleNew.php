@@ -11,15 +11,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $personname = $_POST["personname"];
-$sql = sprintf("SELECT Item FROM itemTracker WHERE Name = %s",$personname);
-echo $sql;
+$sql = sprintf("SELECT Item FROM itemTracker WHERE Name = '%s'",$personname);
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    echo $row["Name"] , "is in possession of: ";
+    echo $personname , " is in possession of: ";
     while($row = $result->fetch_assoc()) {
-        $row["Item"] , "<br>";
+        echo $row["Item"] , "<br>";
     }
 } else {
     echo "0 results";

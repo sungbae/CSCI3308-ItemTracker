@@ -10,15 +10,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$itemname = $_POST["itemname"];
-$sql = sprintf("SELECT Name FROM itemTracker WHERE Item = '%s'",$itemname);
+$personname = $_POST["personname"];
+$sql = sprintf("SELECT Item FROM itemTracker WHERE Name = '%s'",$personname);
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+    echo $personname , "is in possession of: ";
     while($row = $result->fetch_assoc()) {
-        echo "Item is with: " . $row["Name"] , "<br>";
+        echo $row["Item"] , "<br>";
     }
 } else {
     echo "0 results";
