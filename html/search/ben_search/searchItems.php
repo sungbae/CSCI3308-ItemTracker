@@ -2,6 +2,7 @@
 include 'connect.php';
 
 $search = $_POST['searchItem']."*";
+var_dump($_POST['searchItem']);
 
 $search_query = $link->prepare("SELECT * FROM `itemTracker` WHERE Item = (?)");
 $search_query->bind_param('s', $search);
