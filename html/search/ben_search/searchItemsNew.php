@@ -10,9 +10,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT Name FROM itemTracker WHERE Item = Laptop";
-$result = $conn->query($sql);
+$name = $_POST["name"]."*";
+$sql = "SELECT Name FROM itemTracker WHERE Item = %s";
+$result = $conn->query(sprintf($sql, $name));
 
 if ($result->num_rows > 0) {
     // output data of each row
