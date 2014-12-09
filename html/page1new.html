@@ -4,8 +4,13 @@
 <body>   
 <div class="content">
     <form action="/search/ben_search/searchItemsNew.php" method="POST">
-        <label>Name: </label>
-        <input name="name" type="text" size="25" />
+        <label>Search by item name: </label>
+        <input name="itemname" type="text" size="25" />
+        <input name="mySubmit" type="submit" value="Submit!" />
+    </form>
+    <form action="/search/ben_search/searchPeopleNew.php" method="POST">
+        <label>Search by person name: </label>
+        <input name="personname" type="text" size="25" />
         <input name="mySubmit" type="submit" value="Submit!" />
     </form>
 </div>
