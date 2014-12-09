@@ -1,6 +1,6 @@
 <?php
  // Connects to Our Database
-$link = new mysqli('128.138.65.97', 'user', 'dbPassword', 'itemTracker');
+$link = new mysqli('mysql3.000webhost.com', 'a6435557_sungDB', 'abc123', 'a6435557_sungDB');
 
 /* check connection */
 if (mysqli_connect_errno()) {
