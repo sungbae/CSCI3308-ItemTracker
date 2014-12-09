@@ -1,10 +1,10 @@
 <?php
 include 'connect.php';
 
-$search = $_POST['search']."*";
+$search = $_POST['searchItem']."*";
 
-$search_query = $link->prepare("SELECT * FROM `itemTracker` WHERE Item = $search");
-//$search_query->bind_param('s', $search);
+$search_query = $link->prepare("SELECT * FROM `itemTracker` WHERE Item = ?");
+$search_query->bind_param('s', $search);
 $search_query->execute();
 $search_query->store_result();
 $search_rows = $search_query->num_rows;
