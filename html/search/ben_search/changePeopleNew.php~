@@ -1,8 +1,8 @@
 <?php
-$servername = "mysql.freehostingnoads.net";
-$username = "u131515183_yang";
+$servername = "mysql5.000webhost.com";
+$username = "a3578802_yang";
 $password = "abc123";
-$dbname = "u131515183_yang";
+$dbname = "a3578802_yang";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

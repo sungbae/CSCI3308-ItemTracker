@@ -85,11 +85,10 @@
 
 
 <?php
-$servername = "mysql3.000webhost.com";
-$username = "a6435557_sungDB";
+$servername = "mysql5.000webhost.com";
+$username = "a3578802_yang";
 $password = "abc123";
-$dbname = "a6435557_sungDB";
-
+$dbname = "a3578802_yang";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
