@@ -1,8 +1,8 @@
 <?php
-$servername = "mysql5.000webhost.com";
-$username = "a3578802_yang";
+$servername = "mysql.freehostingnoads.net";
+$username = "u131515183_yang";
 $password = "abc123";
-$dbname = "a3578802_yang";
+$dbname = "u131515183_yang";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-//$itemname = $_POST["Laptop"];
+$itemnamechange = $_POST["itemnamechange"];
 $sql = sprintf("SELECT Name FROM itemTracker WHERE Item = 'Laptop'");
 
 $personname = $conn->query($sql);

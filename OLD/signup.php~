@@ -58,7 +58,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action = "/search/ben_search/signup.php" method = "POST"> 
+                            <form  action = "signup.php" method = "POST"> 
                                 <h1> Sign up </h1> 
 				        <label for="signup_user" class="uname" data-icon="u">Enter username</label>
        		        		<input id="signup_user" name="signup_user" required="required" type="text" placeholder="mysuperusername690" />
