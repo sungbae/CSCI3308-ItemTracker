@@ -23,10 +23,10 @@
 			<h1> Item Search</h1>
 		</header>
 <?php
-$servername = "mysql5.000webhost.com";
-$username = "a3578802_yang";
+$servername = "mysql.freehostingnoads.net";
+$username = "u131515183_yang";
 $password = "abc123";
-$dbname = "a3578802_yang";
+$dbname = "u131515183_yang";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -42,7 +42,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "Item is currently with " . $row["Name"] , ".<br>";
+        echo "$itemname is currently with " . $row["Name"] , ".<br>";
     }
 } else {
     echo "0 results";
