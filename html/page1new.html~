@@ -35,7 +35,7 @@
 	        <input name="mySubmit" type="submit" value="Submit" />
 	    	<br>
 	    </form>
-	    <form action="/search/ben_search/changePeopleNew.php" method="POST">
+	    <form action="/search/ben_search/changePeople.php" method="POST">
 	        <label>Give </label>
 		<input name="itemnamechange" type="text" size="15" />
 		<label>to</label>
