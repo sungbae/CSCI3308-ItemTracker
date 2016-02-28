@@ -33,7 +33,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="page1new.html" autocomplete="on"> 
+                            <form  action="searchpage.html" autocomplete="on"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your username </label>
@@ -81,15 +81,11 @@
                 </div>  
             </section>
         </div>
-
-
-
 <?php
 $servername = "mysql.freehostingnoads.net";
 $username = "u131515183_yang";
 $password = "abc123";
 $dbname = "u131515183_yang";
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -99,10 +95,7 @@ if ($conn->connect_error) {
 $signup_user = $_POST["signup_user"];
 $signup_pass = $_POST["signup_pass"];
 $sql = sprintf("INSERT INTO signup (username, password) VALUES ('%s', '%s')",$signup_user,$signup_pass);
-
 $result = $conn->query($sql);
-
-
 $conn->close();
 ?>     
 </body>

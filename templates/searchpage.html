@@ -20,35 +20,30 @@
     <body>  
 	<div class="container">
 		<header>
-			<h1> Item Search</h1>
+			<h1> Find Your Things</h1>
 		</header>
-<?php
-$servername = "mysql3.000webhost.com";
-$username = "a6435557_sungDB";
-$password = "abc123";
-$dbname = "a6435557_sungDB";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$itemname = $_POST["itemname"];
-$sql = sprintf("SELECT Name FROM itemTracker WHERE Item = '%s'",$itemname);
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "Item is currently with " . $row["Name"] , ".<br>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
-?> 
-</body>
+	<div class="content">
+	    <form action="../src/search/searchItemsNew.php" method="POST">
+	        <label>Search by item name: </label>
+	        <input name="itemname" type="text" size="25" />
+	        <input name="mySubmit" type="submit" value="Submit" />
+		<br>
+	    </form>
+	    <form action="../src/search/searchPeopleNew.php" method="POST">
+	        <label>Search by person name: </label>
+	        <input name="personname" type="text" size="25" />
+	        <input name="mySubmit" type="submit" value="Submit" />
+	    	<br>
+	    </form>
+	    <form action="../src/search/changePeople.php" method="POST">
+	        <label>Give </label>
+		<input name="itemnamechange" type="text" size="15" />
+		<label>to</label>
+		<input name="personnamechange" type="text" size="15" />
+	        <input name="mySubmit" type="submit" value="Submit" />
+		<br>
+	    </form>
+	</div>
+    </body>
 </html>
 

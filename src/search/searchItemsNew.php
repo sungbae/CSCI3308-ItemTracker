@@ -20,30 +20,26 @@
     <body>  
 	<div class="container">
 		<header>
-			<h1> Search People</h1>
+			<h1> Item Search</h1>
 		</header>
 <?php
-$servername = "mysql3.000webhost.com";
-$username = "a6435557_sungDB";
+$servername = "mysql.freehostingnoads.net";
+$username = "u131515183_yang";
 $password = "abc123";
-$dbname = "a6435557_sungDB";
-
+$dbname = "u131515183_yang";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$personname = $_POST["personname"];
-$sql = sprintf("SELECT Item FROM itemTracker WHERE Name = '%s'",$personname);
-
+$itemname = $_POST["itemname"];
+$sql = sprintf("SELECT Name FROM itemTracker WHERE Item = '%s'",$itemname);
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
     // output data of each row
-    echo $personname , " is in possession of: <br>";
     while($row = $result->fetch_assoc()) {
-        echo $row["Item"] , "<br>";
+        echo "$itemname is currently with " . $row["Name"] , ".<br>";
     }
 } else {
     echo "0 results";

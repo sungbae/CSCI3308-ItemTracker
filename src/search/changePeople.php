@@ -20,35 +20,43 @@
     <body>  
 	<div class="container">
 		<header>
-			<h1> Item Search</h1>
+			<h1> Item Giver</h1>
 		</header>
 <?php
 $servername = "mysql.freehostingnoads.net";
 $username = "u131515183_yang";
 $password = "abc123";
 $dbname = "u131515183_yang";
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+	die("Connection failed: " . $conn->connect_error);
 }
-$itemname = $_POST["itemname"];
-$sql = sprintf("SELECT Name FROM itemTracker WHERE Item = '%s'",$itemname);
+$itemnamechange = $_POST["itemnamechange"];
+$sql = sprintf("SELECT Name FROM itemTracker WHERE Item = '%s'",$itemnamechange);
 
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "$itemname is currently with " . $row["Name"] , ".<br>";
-    }
-} else {
-    echo "0 results";
+$personname = $conn->query($sql);
+if ($personname->num_rows > 0) {
+	// output data of each row
+	while($row = $personname->fetch_assoc()) {
+		$personnamechange = $_POST["personnamechange"];
+		$sql2 = sprintf("UPDATE itemTracker SET Name='%s' WHERE Name='%s'",$personnamechange, "" . $row["Name"]);
+		$conn->query($sql2);
+		$sql3 = sprintf("SELECT Name FROM itemTracker WHERE Item = '%s'", $itemnamechange);
+		$result2 = $conn->query($sql3);
+		if ($result2->num_rows > 0) {
+			// output data of each row
+			echo $personnamechange , " is now in possession of ", $itemnamechange, ".";
+		}
+		else {
+			echo "you should not see this";
+		}
+	}
 }
-$conn->close();
-?> 
+else {
+	echo "Item does not exist.";
+}
+?>
 </body>
 </html>
-
